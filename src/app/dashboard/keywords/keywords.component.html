@@ -1,0 +1,73 @@
+<div class="keywords-section">
+    <button type="button" class="btn btn-primary mt-2" data-toggle="modal" data-target="#registerExpertModal">
+        Add keywords
+    </button>
+</div>
+
+<div class="keywords-section">
+    <div class="col-md-12">
+      <div class="panel-body table-responsive">
+        <table class="table table-striped table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Expert</th>
+          </thead>
+          <tbody>
+            <tr *ngFor="let keyword of keywords">
+              <td>{{keyword.name}}</td>
+              <td>{{keyword.analyst.firstName}}{{keyword.analyst.lastName}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="registerExpertModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form [formGroup]="keywordsForm">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add Keyword</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="col">
+                        <label>Keyword</label>
+                        <input type="text" class="form-control" formControlName="name">
+                    </div>
+                    <div class="col">
+                        <label>Select the analyst that said this keyword</label>
+                        <div class="row">
+                            <div class="col">
+                                <select class="selectpicker" formControlName="analystId">
+                                    <option *ngFor="let expert of experts" [value]="expert.id">{{expert.firstName}}{{expert.lastName}}</option>
+                                </select>
+                            </div>
+                        </div>
+                        <!-- <div class="row">
+                            <div class="col">
+                                <select class="selectpicker">
+                                    <option>One</option>
+                                    <option>two</option>
+                                    <option>three</option>
+                                </select>
+                            </div>
+                        </div> -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary" (click)="onSubmit(keywordsForm)" data-dismiss="modal">Save changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
