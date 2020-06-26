@@ -11,6 +11,7 @@
                 <thead>
                     <tr>
                         <th scope="col">Name</th>
+                        <th scope="col">Twitter Username</th>
                         <th scope="col">Expertise</th>
                         <th scope="col">Education</th>
                         <th scope="col">Since joined FX</th>
@@ -18,7 +19,8 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let analyst of analysts">
-                            <td>{{analyst.firstName}}{{analyst.lastName}}</td>
+                            <td>{{analyst.firstName}} {{analyst.lastName}}</td>
+                            <td>{{analyst.userName}}</td>
                             <td>{{analyst.expertise}}</td>
                             <td>{{analyst.education}}</td>
                             <td>{{analyst.workingFxSince}}</td>
