@@ -6,6 +6,7 @@ export interface FxChart{
 export interface Analyst{
     firstName: string,
     lastName: string,
+    userName:string,
     expertise: string,
     country: string,
     workingFxSince: string,

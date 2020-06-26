@@ -25,6 +25,7 @@ export class ExpertsComponent implements OnInit {
       this.expertsForm = this.fb.group({
         firstName: new FormControl(),
         lastName: new FormControl(),
+        userName:new FormControl(),
         expertise: new FormControl(),
         country: new FormControl(),
         workingFxSince: new FormControl(),
@@ -52,6 +53,7 @@ export class ExpertsComponent implements OnInit {
     onSubmit(form) {
       this.analystModel = this.expertsForm.value;
       this.fxService.registerAnalyst(this.analystModel).subscribe(response =>{
+        this.expertsForm.reset();
         this.getAnalysts();
       })
     }

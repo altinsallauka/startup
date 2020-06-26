@@ -55,6 +55,7 @@ export class KeywordsComponent implements OnInit {
     onSubmit(form) {
       this.keywordsModel = this.keywordsForm.value;
       this.fxService.registerKeyword(this.keywordsModel).subscribe(response=>{
+        this.keywordsForm.reset();
         this.getKeywords();
       })
     }
