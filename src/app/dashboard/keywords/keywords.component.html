@@ -11,12 +11,12 @@
           <thead>
             <tr>
               <th scope="col">Name</th>
-              <th scope="col">Expert</th>
+              <!-- <th scope="col">Expert</th> -->
           </thead>
           <tbody>
             <tr *ngFor="let keyword of keywords">
-              <td>{{keyword.name}}</td>
-              <td>{{keyword.analyst.firstName}} {{keyword.analyst.lastName}}</td>
+              <td>{{keyword.word}}</td>
+              <!-- <td>{{keyword.analyst.firstName}} {{keyword.analyst.lastName}}</td> -->
             </tr>
           </tbody>
         </table>
@@ -41,9 +41,9 @@
                 <div class="modal-body">
                     <div class="col">
                         <label>Keyword</label>
-                        <input type="text" class="form-control" formControlName="name">
+                        <input type="text" class="form-control" formControlName="word">
                     </div>
-                    <div class="col">
+                    <!-- <div class="col">
                         <label>Select the analyst that said this keyword</label>
                         <div class="row">
                             <div class="col">
@@ -52,16 +52,7 @@
                                 </select>
                             </div>
                         </div>
-                        <!-- <div class="row">
-                            <div class="col">
-                                <select class="selectpicker">
-                                    <option>One</option>
-                                    <option>two</option>
-                                    <option>three</option>
-                                </select>
-                            </div>
-                        </div> -->
-                    </div>
+                    </div> -->
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

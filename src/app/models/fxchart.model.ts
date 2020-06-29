@@ -13,8 +13,8 @@ export interface Analyst{
     education: string
 }
 export interface Keyword{
-    name:string,
-    analystId:string;
+    word:string,
+    // analystId:string;
 }
 export interface analystCount{
 

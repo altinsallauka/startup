@@ -47,8 +47,8 @@ export class KeywordsComponent implements OnInit {
     }
     buildExpertsForm() {
       this.keywordsForm = this.fb.group({
-        name: new FormControl(),
-        analystId: new FormControl(),
+        word: new FormControl(),
+        // analystId: new FormControl(),
         
       })
     }
